@@ -1,0 +1,75 @@
+/* ========== SM ========== */
+@media (min-width: 576px) {
+  body.responsive {
+    background-color: blue;
+  }
+}
+
+/* ========== MD ========== */
+@media (min-width: 768px) {
+  body.responsive {
+    background-color: yellow;
+  }
+}
+
+/* ========== LG ========== */
+@media (min-width: 992px) {
+  body.responsive {
+    background-color: green;
+  }
+}
+
+/* ========== XL ========== */
+@media (min-width: 1200px) {
+  body.responsive {
+    background-color: red;
+  }
+
+  /* ========== HEADER ========== */
+  #bst-header {
+    width: calc(100% - 200px) !important;
+  }
+  #bst-header.sync-collapse {
+    width: calc(100% - 55px) !important;
+  }
+
+  /* ========== SIDEBAR ========== */
+  #bst-sidebar .btn-collapse {
+    display: none;
+  }
+
+  /* ========== SIDEBAR SHADOW ========== */
+  #bst-sidebar-shadow {
+    display: none;
+  }
+
+  /* ========== SIDEBAR COLLAPSE ========== */
+  #bst-sidebar-collapse.show {
+    display: block;
+  }
+
+  /* ========== MAIN ========== */
+  .bst-main {
+    width: calc(100% - 215px) !important;
+  }
+  .bst-main.sync-collapse {
+    width: calc(100% - 55px) !important;
+  }
+}
+
+/* ========== 2XL ========== */
+@media (min-width: 1400px) {
+  body.responsive {
+    background-color: black;
+  }
+
+  /* ========== SIDEBAR COLLAPSE ========== */
+  #bst-sidebar-collapse.sync-collapse {
+    width: 4% !important;
+  }
+
+  /* ========== MAIN ========== */
+  .bst-main.sync-collapse {
+    width: calc(100% - 75px) !important;
+  }
+}

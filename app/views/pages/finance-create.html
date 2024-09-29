@@ -1,0 +1,3289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Finance - Create</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <!-- ========== CSS ========== -->
+  </head>
+  <body>
+    <div class="container-standard">
+      <!-- ========== SIDEBAR ========== -->
+      <div id="bst-sidebar-wrapper">
+        <sidebar
+          id="bst-sidebar"
+          class="w-min toggle-sidebar collapse collapse-horizontal"
+        >
+          <!-- space before site logo -->
+          <div class="h-0d5r"></div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="#">
+              <img src="assets/images/logo.png" alt="logo.png" class="w-80" />
+            </a>
+            <button
+              class="btn-none btn-collapse"
+              data-bs-toggle="collapse"
+              data-bs-target=".toggle-sidebar"
+              onclick="handleToggleCollapse()"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-square-half"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 15V1h6a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1zm6 1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="h-1d25r"></div>
+          <div class="group-board">
+            <div class="board board-1">
+              <p class="board-title">Dashboards</p>
+              <div class="h-0d5r"></div>
+              <ul class="board-single">
+                <!-- item -->
+                <li class="board-item active">
+                  <a href="index.html" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-house"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Home</span>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a href="#" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-list-task"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5zM3 3H2v1h1z"
+                      />
+                      <path
+                        d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5zM2 7h1v1H2zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm1 .5H2v1h1z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">To-do List</span></a
+                  >
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a href="#" class="btn board-link">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file-text"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"
+                      />
+                      <path
+                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Approve Docs</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="h-0d5r"></div>
+            <div class="board board-2">
+              <p class="board-title">Other</p>
+              <ul class="board-collapse">
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#bst-board-finance"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-stack"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z"
+                      />
+                      <path
+                        d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.6.6 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Finance</span>
+                  </button>
+                  <!-- item: collapse -->
+                  <ul
+                    id="bst-board-finance"
+                    class="board-collapse-items collapse"
+                  >
+                    <!-- item -->
+                    <li class="board-item">
+                      <a href="finance.html" class="btn board-link"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-archive"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"
+                          />
+                        </svg>
+                        <span class="text-start ms-2">Page</span>
+                      </a>
+                    </li>
+                    <!-- item -->
+                    <li class="board-item">
+                      <a href="finance-create.html" class="btn board-link"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-archive"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"
+                          />
+                        </svg>
+                        <span class="text-start ms-2">Create</span>
+                      </a>
+                    </li>
+                    <!-- item -->
+                    <li class="board-item">
+                      <a href="finance-schedule.html" class="btn board-link"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-archive"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"
+                          />
+                        </svg>
+                        <span class="text-start ms-2">Schedule</span>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-currency-dollar"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Accounting</span>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person-plus"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">HR</span>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-suitcase-lg"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M5 2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2h3.5A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5H14a.5.5 0 0 1-1 0H3a.5.5 0 0 1-1 0h-.5A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2zm1 0h4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H3V3zM15 12.5v-9a.5.5 0 0 0-.5-.5H13v10h1.5a.5.5 0 0 0 .5-.5m-3 .5V3H4v10z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">TA</span>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-ui-radios"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM0 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0m7-1.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5M3 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6m0 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">SMD</span>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Admin</span>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-box-seam"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Facilities</span>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-feather"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M15.807.531c-.174-.177-.41-.289-.64-.363a3.8 3.8 0 0 0-.833-.15c-.62-.049-1.394 0-2.252.175C10.365.545 8.264 1.415 6.315 3.1S3.147 6.824 2.557 8.523c-.294.847-.44 1.634-.429 2.268.005.316.05.62.154.88q.025.061.056.122A68 68 0 0 0 .08 15.198a.53.53 0 0 0 .157.72.504.504 0 0 0 .705-.16 68 68 0 0 1 2.158-3.26c.285.141.616.195.958.182.513-.02 1.098-.188 1.723-.49 1.25-.605 2.744-1.787 4.303-3.642l1.518-1.55a.53.53 0 0 0 0-.739l-.729-.744 1.311.209a.5.5 0 0 0 .443-.15l.663-.684c.663-.68 1.292-1.325 1.763-1.892.314-.378.585-.752.754-1.107.163-.345.278-.773.112-1.188a.5.5 0 0 0-.112-.172M3.733 11.62C5.385 9.374 7.24 7.215 9.309 5.394l1.21 1.234-1.171 1.196-.027.03c-1.5 1.789-2.891 2.867-3.977 3.393-.544.263-.99.378-1.324.39a1.3 1.3 0 0 1-.287-.018Zm6.769-7.22c1.31-1.028 2.7-1.914 4.172-2.6a7 7 0 0 1-.4.523c-.442.533-1.028 1.134-1.681 1.804l-.51.524zm3.346-3.357C9.594 3.147 6.045 6.8 3.149 10.678c.007-.464.121-1.086.37-1.806.533-1.535 1.65-3.415 3.455-4.976 1.807-1.561 3.746-2.36 5.31-2.68a8 8 0 0 1 1.564-.173"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Report</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="h-0d5r"></div>
+            <div class="board board-3">
+              <p class="board-title">Settings</p>
+              <ul class="board-collapse">
+                <!-- item -->
+                <li class="board-item">
+                  <button class="btn board-link btn-none">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-gear"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"
+                      />
+                      <path
+                        d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">System</span>
+                  </button>
+                </li>
+              </ul>
+              <ul class="board-single">
+                <!-- item -->
+                <li class="board-item">
+                  <a href="search-result.html" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-life-preserver"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m6.43-5.228a7.03 7.03 0 0 1-3.658 3.658l-1.115-2.788a4 4 0 0 0 1.985-1.985zM5.228 14.43a7.03 7.03 0 0 1-3.658-3.658l2.788-1.115a4 4 0 0 0 1.985 1.985zm9.202-9.202-2.788 1.115a4 4 0 0 0-1.985-1.985l1.115-2.788a7.03 7.03 0 0 1 3.658 3.658m-8.087-.87a4 4 0 0 0-1.985 1.985L1.57 5.228A7.03 7.03 0 0 1 5.228 1.57zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Help</span>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a href="login.html" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-box-arrow-in-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Login</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="h-0d5r"></div>
+            <div class="board board-4">
+              <p class="board-title">UI</p>
+              <ul class="board-single">
+                <!-- item -->
+                <li class="board-item">
+                  <a href="ui-form.html" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Form</span>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a href="ui-table.html" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Table</span>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a href="filter-search.html" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Filter search</span>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a href="filter-search-opt2.html" class="btn board-link"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"
+                      />
+                    </svg>
+                    <span class="text-start ms-2">Filter search 2</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </sidebar>
+
+        <!-- ========== SIDEBAR SHADOW ========== -->
+        <div
+          id="bst-sidebar-shadow"
+          class="toggle-sidebar collapse collapse-horizontal d-none"
+        ></div>
+
+        <!-- ========== SIDEBAR COLLAPSE ========== -->
+        <sidebar
+          id="bst-sidebar-collapse"
+          class="w-7 toggle-sidebar collapse collapse-horizontal"
+        >
+          <!-- space before site logo -->
+          <div class="h-0d5r"></div>
+          <div class="d-flex-center">
+            <a class="text-center" href="#">
+              <img
+                src="assets/images/logo-collapse.png"
+                alt="logo-collapse.png"
+                class="w-100"
+              />
+            </a>
+          </div>
+          <div class="h-1d25r"></div>
+          <div class="group-board">
+            <div class="board board-1">
+              <ul class="board-single">
+                <!-- item -->
+                <li class="board-item active">
+                  <a
+                    href=""
+                    class="btn board-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Home"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-house"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a
+                    href="#"
+                    class="btn board-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="To-do List"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-list-task"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5zM3 3H2v1h1z"
+                      />
+                      <path
+                        d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5zM2 7h1v1H2zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm1 .5H2v1h1z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a
+                    href="#"
+                    class="btn board-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Approve Docs"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file-text"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"
+                      />
+                      <path
+                        d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="h-0d5r"></div>
+            <div class="board board-2">
+              <ul class="board-collapse">
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#bst-board-finance"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Finance"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-stack"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.6.6 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.6.6 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.6.6 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535z"
+                      />
+                      <path
+                        d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.6.6 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0z"
+                      />
+                    </svg>
+                  </button>
+                  <!-- item: collapse -->
+                  <ul
+                    id="bst-board-finance"
+                    class="board-collapse-items collapse"
+                  >
+                    <!-- item -->
+                    <li class="board-item">
+                      <a
+                        href="finance"
+                        class="btn board-link"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="right"
+                        title="Page"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-archive"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                    <!-- item -->
+                    <li class="board-item">
+                      <a
+                        href="finance-create"
+                        class="btn board-link"
+                        data-bs-toggle="tooltip"
+                        data-bs-placement="right"
+                        title="Create"
+                        ><svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-archive"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5zm13-3H1v2h14zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"
+                          />
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Accounting"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-currency-dollar"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="HR"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person-plus"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="TA"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-suitcase-lg"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M5 2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2h3.5A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5H14a.5.5 0 0 1-1 0H3a.5.5 0 0 1-1 0h-.5A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2zm1 0h4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H3V3zM15 12.5v-9a.5.5 0 0 0-.5-.5H13v10h1.5a.5.5 0 0 0 .5-.5m-3 .5V3H4v10z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="SMD"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-ui-radios"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M7 2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zM0 12a3 3 0 1 1 6 0 3 3 0 0 1-6 0m7-1.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5zm0-5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0 8a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5M3 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6m0 4.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Admin"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Facilities"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-box-seam"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2zm3.564 1.426L5.596 5 8 5.961 14.154 3.5zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Report"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-feather"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M15.807.531c-.174-.177-.41-.289-.64-.363a3.8 3.8 0 0 0-.833-.15c-.62-.049-1.394 0-2.252.175C10.365.545 8.264 1.415 6.315 3.1S3.147 6.824 2.557 8.523c-.294.847-.44 1.634-.429 2.268.005.316.05.62.154.88q.025.061.056.122A68 68 0 0 0 .08 15.198a.53.53 0 0 0 .157.72.504.504 0 0 0 .705-.16 68 68 0 0 1 2.158-3.26c.285.141.616.195.958.182.513-.02 1.098-.188 1.723-.49 1.25-.605 2.744-1.787 4.303-3.642l1.518-1.55a.53.53 0 0 0 0-.739l-.729-.744 1.311.209a.5.5 0 0 0 .443-.15l.663-.684c.663-.68 1.292-1.325 1.763-1.892.314-.378.585-.752.754-1.107.163-.345.278-.773.112-1.188a.5.5 0 0 0-.112-.172M3.733 11.62C5.385 9.374 7.24 7.215 9.309 5.394l1.21 1.234-1.171 1.196-.027.03c-1.5 1.789-2.891 2.867-3.977 3.393-.544.263-.99.378-1.324.39a1.3 1.3 0 0 1-.287-.018Zm6.769-7.22c1.31-1.028 2.7-1.914 4.172-2.6a7 7 0 0 1-.4.523c-.442.533-1.028 1.134-1.681 1.804l-.51.524zm3.346-3.357C9.594 3.147 6.045 6.8 3.149 10.678c.007-.464.121-1.086.37-1.806.533-1.535 1.65-3.415 3.455-4.976 1.807-1.561 3.746-2.36 5.31-2.68a8 8 0 0 1 1.564-.173"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="h-0d5r"></div>
+            <div class="board board-3">
+              <ul class="board-collapse">
+                <!-- item -->
+                <li class="board-item">
+                  <button
+                    class="btn board-link btn-none"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="System"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-gear"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"
+                      />
+                      <path
+                        d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <ul class="board-single">
+                <!-- item -->
+                <li class="board-item">
+                  <a
+                    href="#"
+                    class="btn board-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Help"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-life-preserver"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m6.43-5.228a7.03 7.03 0 0 1-3.658 3.658l-1.115-2.788a4 4 0 0 0 1.985-1.985zM5.228 14.43a7.03 7.03 0 0 1-3.658-3.658l2.788-1.115a4 4 0 0 0 1.985 1.985zm9.202-9.202-2.788 1.115a4 4 0 0 0-1.985-1.985l1.115-2.788a7.03 7.03 0 0 1 3.658 3.658m-8.087-.87a4 4 0 0 0-1.985 1.985L1.57 5.228A7.03 7.03 0 0 1 5.228 1.57zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a
+                    href="login"
+                    class="btn board-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Login"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-box-arrow-in-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="h-0d5r"></div>
+            <div class="board board-4">
+              <ul class="board-single">
+                <!-- item -->
+                <li class="board-item">
+                  <a
+                    href="ui-form"
+                    class="btn board-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Form"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <!-- item -->
+                <li class="board-item">
+                  <a
+                    href="ui-table"
+                    class="btn board-link"
+                    data-bs-toggle="tooltip"
+                    data-bs-placement="right"
+                    title="Table"
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-file"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </sidebar>
+      </div>
+
+      <!-- ========== HEADER ========== -->
+      <div id="bst-header-wrapper" class="bg-neutral-blue-300">
+        <header
+          id="bst-header"
+          class="position-fixed w-100 top-0 end-0 py-2 px-3 bg-white"
+        >
+          <!-- header bar -->
+          <div
+            class="d-flex align-items-center justify-content-between mx-auto p-3 inter-regular"
+          >
+            <!-- left: breadcrumb -->
+            <nav
+              aria-label="breadcrumb"
+              class="d-flex gap-3 align-items-center"
+            >
+              <button
+                class="btn-none"
+                data-bs-toggle="collapse"
+                data-bs-target=".toggle-sidebar"
+                onclick="handleToggleCollapse()"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-square-half"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 15V1h6a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1zm6 1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"
+                  />
+                </svg>
+              </button>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Home</li>
+              </ol>
+            </nav>
+            <!-- right: options -->
+            <ul class="d-flex column-gap-1 m-0 p-0">
+              <!-- search -->
+              <li>
+                <div id="bst-search">
+                  <!-- Modal: Trigger -->
+                  <button
+                    type="button"
+                    class="btn-none btn-icon"
+                    data-bs-toggle="modal"
+                    aria-expanded="false"
+                    data-bs-target="#searchModal"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-search"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </li>
+              <!-- help -->
+              <li>
+                <div id="bst-help">
+                  <!-- Dropdown: Trigger -->
+                  <button
+                    type="button"
+                    class="btn-none btn-icon dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    data-bs-auto-close="outside"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-question-circle"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+                      />
+                      <path
+                        d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
+                      />
+                    </svg>
+                  </button>
+                  <!-- Dropdown -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-style1 dropdown-menu-hover-style1 dropdown-menu-sm dropdown-menu-end"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="bi bi-life-preserver"></i
+                        >&nbsp;&nbsp;&nbsp;Help</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="bi bi-feather"></i
+                        >&nbsp;&nbsp;&nbsp;Training</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-bs-toggle="collapse"
+                        href="#collapseNewReleased"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseNewReleased"
+                      >
+                        <i class="bi bi-person"></i>&nbsp;&nbsp;&nbsp;New
+                        Released
+                      </a>
+                      <div class="collapse" id="collapseNewReleased">
+                        <div class="card card-body border-0 py-0 px-2">
+                          <ul class="list-group-none">
+                            <li><a href="#">Item</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >New Features Instruction</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-bs-toggle="collapse"
+                        href="#collapseChangelog"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseChangelog"
+                      >
+                        Change log
+                      </a>
+                      <div class="collapse" id="collapseChangelog">
+                        <div class="card card-body border-0 py-0 px-2">
+                          <ul class="list-group-none">
+                            <li><a href="#">Item</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Ver. *.* Date (mm/yy)</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="bi bi-archive"></i>&nbsp;&nbsp;&nbsp;Send
+                        Feedback</a
+                      >
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Report Issues</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Suggest An Idea</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >Submit Question for Chatbot</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- notifications -->
+              <li>
+                <div id="bst-notifications">
+                  <!-- Dropdown: Trigger -->
+                  <button
+                    type="button"
+                    class="btn-none btn-icon dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    data-bs-auto-close="outside"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-bell"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"
+                      />
+                    </svg>
+                  </button>
+                  <!-- Dropdown -->
+                  <div
+                    class="dropdown-menu dropdown-menu-style1 dropdown-menu-sm dropdown-menu-end"
+                  >
+                    <!-- header -->
+                    <div class="header">
+                      <p class="poppins-semibold display-9 leading-16">
+                        Notifications
+                      </p>
+
+                      <div class="dropdown">
+                        <button
+                          class="btn-none dropdown-toggle show"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="true"
+                        >
+                          <i class="bi bi-three-dots"></i>
+                        </button>
+                        <ul
+                          class="dropdown-menu dropdown-menu-sm dropdown-menu-end dropdown-submenu-style1"
+                        >
+                          <li>
+                            <a class="dropdown-item" href="#">Silent mode</a>
+                          </li>
+                          <li><hr class="dropdown-divider" /></li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Mark all as read</a
+                            >
+                          </li>
+                          <li><hr class="dropdown-divider" /></li>
+                          <li>
+                            <a class="dropdown-item text-danger" href="#"
+                              >Delete all read</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- body -->
+                    <ul class="list-group-none list-group-style2">
+                      <li>
+                        <a class="dropdown-item unread" href="#"
+                          ><span class="highlight">Mr X</span> wants to edit
+                          <span class="highlight">Form Budget Transfer</span>
+                          <span class="checktime d-block mt-1">5 min ago</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item unread" href="#"
+                          ><span class="highlight">Tuan Viet</span> wants to
+                          edit
+                          <span class="highlight">Form Budget ...</span>
+                          <span class="checktime d-block mt-1">1 hour ago</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          ><span class="highlight">Huy Nguyen</span> completed
+                          <span class="highlight">Create New Form</span>
+                          <span class="checktime d-block mt-1">1:12pm</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          ><span class="highlight">Pham Tran</span> added you in
+                          <span class="highlight">Event Open Gra...</span>
+                          <span class="checktime d-block mt-1">10:45pm</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="#"
+                          ><span class="highlight">Pham Tran</span> added you in
+                          <span class="highlight">Event Open Gra...</span>
+                          <span class="checktime d-block mt-1">10:45pm</span>
+                        </a>
+                      </li>
+                    </ul>
+                    <!-- footer -->
+                    <div class="text-center">
+                      <a href="notification.html">View all</a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- user profile -->
+              <li>
+                <div id="bst-profile">
+                  <!-- Dropdown: Trigger -->
+                  <button
+                    type="button"
+                    class="btn-none btn-icon dropdown-toggle"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    data-bs-auto-close="outside"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      fill="currentColor"
+                      class="bi bi-person"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"
+                      />
+                    </svg>
+                  </button>
+                  <!-- Dropdown -->
+                  <ul
+                    class="dropdown-menu dropdown-menu-style1 dropdown-menu-hover-style1 dropdown-menu-sm dropdown-menu-end"
+                  >
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="bi bi-lock"></i>&nbsp;&nbsp;&nbsp;Change
+                        Password</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        data-bs-toggle="collapse"
+                        href="#collapseProfile"
+                        role="button"
+                        aria-expanded="false"
+                        aria-controls="collapseProfile"
+                      >
+                        <i class="bi bi-person"></i>&nbsp;&nbsp;&nbsp;Your
+                        Profile
+                      </a>
+                      <div class="collapse" id="collapseProfile">
+                        <div class="card card-body border-0 py-0 px-2">
+                          <ul class="list-group-none">
+                            <li><a href="#">Grade</a></li>
+                            <li><a href="#">Your Boss</a></li>
+                            <li><a href="#">Your Staff</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="bi bi-feather"></i>&nbsp;&nbsp;&nbsp;Your
+                        Activities</a
+                      >
+                    </li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        ><i class="bi bi-box-arrow-right"></i
+                        >&nbsp;&nbsp;&nbsp;Log Out</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- dark mode -->
+              <li>
+                <div id="bst-darkmode">
+                  <button
+                    type="button"
+                    class="btn-none btn-icon"
+                    id="darkModeToggle"
+                  >
+                    <i class="bi bi-moon-stars"></i>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </header>
+        <div class="h-6r"></div>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="searchModal"
+          tabindex="-1"
+          aria-labelledby="searchModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-2xl">
+            <div class="modal-content p-3 rounded-3">
+              <div class="input-group input-group-style1">
+                <span class="input-group-text"
+                  ><i class="bi bi-search"></i
+                ></span>
+                <input
+                  type="text"
+                  class="form-control display-7"
+                  placeholder="Search or jump to..."
+                  aria-label="Username"
+                  aria-describedby="basic-addon1"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapseSearchInput"
+                />
+                <span class="input-group-text"
+                  ><i class="bi bi-x-circle"></i
+                ></span>
+              </div>
+              <div class="collapse mt-3" id="collapseSearchInput">
+                <ul class="list-group list-group-style1">
+                  <li class="list-group-item title">Recent searches</li>
+                  <li class="list-group-item content">
+                    <div>
+                      <a href="search-result.html" class="text-black"
+                        ><i class="bi bi-clock"></i>&nbsp;Payment request</a
+                      >
+                    </div>
+                    <span class="daytime">yesterday</span>
+                  </li>
+                  <li class="list-group-item content">
+                    <div><i class="bi bi-clock"></i>&nbsp;Setting chart</div>
+                    <span class="daytime">yesterday</span>
+                  </li>
+                  <li class="list-group-item content">
+                    <div>
+                      <i class="bi bi-clock"></i>&nbsp;Purchasing request
+                    </div>
+                    <span class="daytime">Apr 04, 2024</span>
+                  </li>
+                  <li class="list-group-item content">
+                    <div><i class="bi bi-clock"></i>&nbsp;Credit note</div>
+                    <span class="daytime">Apr 04, 2024</span>
+                  </li>
+
+                  <li class="list-group-item title">Quick actions</li>
+                  <li class="list-group-item content">
+                    <div>
+                      <i class="bi bi-box-seam"></i>&nbsp;Create Purchasing
+                      Request
+                    </div>
+                    <div class="btn-wrapper">
+                      <button type="button" class="btn-none btn-icon-style1">
+                        C
+                      </button>
+                      <button type="button" class="btn-none btn-icon-style1">
+                        1
+                      </button>
+                    </div>
+                  </li>
+                  <li class="list-group-item content">
+                    <div>
+                      <i class="bi bi-box-seam"></i>&nbsp;Create Payment Request
+                    </div>
+                    <div class="btn-wrapper">
+                      <button type="button" class="btn-none btn-icon-style1">
+                        C
+                      </button>
+                      <button type="button" class="btn-none btn-icon-style1">
+                        2
+                      </button>
+                    </div>
+                  </li>
+                  <li class="list-group-item content">
+                    <div>
+                      <i class="bi bi-box-seam"></i>&nbsp;Create Credit Note
+                    </div>
+                    <div class="btn-wrapper">
+                      <button type="button" class="btn-none btn-icon-style1">
+                        C
+                      </button>
+                      <button type="button" class="btn-none btn-icon-style1">
+                        3
+                      </button>
+                    </div>
+                  </li>
+                  <li class="list-group-item content">
+                    <div>
+                      <i class="bi bi-box-seam"></i>&nbsp;Create Advance Request
+                    </div>
+                    <div class="btn-wrapper">
+                      <button type="button" class="btn-none btn-icon-style1">
+                        C
+                      </button>
+                      <button type="button" class="btn-none btn-icon-style1">
+                        4
+                      </button>
+                    </div>
+                  </li>
+
+                  <li class="list-group-item title">Documents</li>
+                  <li class="list-group-item content justify-content-start">
+                    <i class="bi bi-file-earmark"></i>&nbsp;
+                    <a href="#">How to create a payment request</a>
+                  </li>
+                  <li class="list-group-item content justify-content-start">
+                    <i class="bi bi-file-earmark"></i>&nbsp;
+                    <a href="#">How to create a credit note</a>
+                  </li>
+                  <li class="list-group-item content justify-content-start">
+                    <i class="bi bi-file-earmark"></i>&nbsp;
+                    <a href="#">Tutorial about setting Chart type</a>
+                  </li>
+                  <li class="list-group-item content justify-content-start">
+                    <i class="bi bi-file-earmark"></i>&nbsp;
+                    <a href="#">How to use filter in the data table</a>
+                  </li>
+
+                  <li class="list-group-item text-grey-300">
+                    Not finding what you‘re looking for? Try one of these
+                    queries instead:
+                  </li>
+                  <li class="list-group-item d-flex column-gap-2">
+                    <button type="button" class="btn-none btn-tag-style1">
+                      <span class="highlight">Pay</span>ment Request
+                    </button>
+                    <button type="button" class="btn-none btn-tag-style1">
+                      create <span class="highlight">pay</span>ment
+                    </button>
+                    <button type="button" class="btn-none btn-tag-style1">
+                      get <span class="highlight">pay</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== MAIN ========== -->
+      <main id="bst-finance-create" class="bst-main bg-neutral-blue-300">
+        <form class="p-3">
+          <!-- HEADER -->
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="group poppins-regular">
+              <p class="display-9 m-0 text-grey">Requestor</p>
+              <p class="display-8 text-primary">
+                hiep.nguyen <span class="text-grey-300"> | 00313739</span>
+              </p>
+            </div>
+            <div class="group">
+              <button
+                type="button"
+                class="btn btn-primary rounded-3 poppins-regular display-8 py-2 px-5"
+              >
+                Save
+              </button>
+            </div>
+          </div>
+
+          <!-- BREAKLINE -->
+          <div class="h-1r"></div>
+
+          <!-- TABLE -->
+          <div>
+            <div class="mt-3">
+              <div class="accordion accordion-style1" id="accordionRow1">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed poppins-semibold display-9"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseRow1"
+                      aria-expanded="true"
+                      aria-controls="collapseRow1"
+                    >
+                      SETTING TYPE
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseRow1"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionRow1"
+                  >
+                    <div class="accordion-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Ordering Department
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">text</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Type <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Expenditure</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Credit Note Type
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Expenditure</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <div class="row">
+                            <div class="col">
+                              <label
+                                class="form-check-label"
+                                for="darkCheckbox"
+                              >
+                                Confidentiality
+                              </label>
+                            </div>
+                            <div class="col">
+                              <input
+                                class="form-check-input dark-style"
+                                type="checkbox"
+                                id="darkCheckbox"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="accordion accordion-style1" id="accordionRow2">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed poppins-semibold display-9"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseRow2"
+                      aria-expanded="true"
+                      aria-controls="collapseRow2"
+                    >
+                      GENERAL'S INFORMATION
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseRow2"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionRow2"
+                  >
+                    <div class="accordion-body">
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <label for="exampleInputText1" class="form-label"
+                            >Prepared By
+                            <span class="text-danger">*</span></label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputText1"
+                            aria-describedby="textHelp"
+                            disabled=""
+                            value="hiep.nguyen"
+                          />
+                        </div>
+                        <div class="col">
+                          <label for="exampleInputText1" class="form-label"
+                            >Employee Code
+                            <span class="text-danger">*</span></label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputText1"
+                            aria-describedby="textHelp"
+                            disabled=""
+                            value="00313739"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Request For
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Particular Store(s)</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Particular Store(s)
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Expenditures</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col-6">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Requested Department
+                            <span class="text-danger">*</span>
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">
+                              IT - APPLICATION , INTEGRATION & MARKET PLACE (G5)
+                            </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="accordion accordion-style1" id="accordionRow3">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed poppins-semibold display-9"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseRow3"
+                      aria-expanded="true"
+                      aria-controls="collapseRow3"
+                    >
+                      PURCHASING'S INFORMATION
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseRow3"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionRow3"
+                  >
+                    <div class="accordion-body pt-0">
+                      <div class="alert alert-warning-style1" role="alert">
+                        Please attach a list of Goods/ Services hereto, in case
+                        your request includes more than 01 item.
+                      </div>
+
+                      <div class="row align-items-center">
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Good/Services
+                            <span class="text-danger">*</span></label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+  text</textarea
+                          >
+                          <div class="mt-3">
+                            <button
+                              type="button"
+                              class="btn btn-outline-pink-300 rounded-3 btn-sm poppins-regular display-9 d-flex align-items-center"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-plus"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                ></path>
+                              </svg>
+                              &nbsp;Attach file
+                            </button>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Requirement/ Specification</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+  text</textarea
+                          >
+                          <div class="mt-3">
+                            <button
+                              type="button"
+                              class="btn btn-outline-pink-300 rounded-3 btn-sm poppins-regular display-9 d-flex align-items-center"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-plus"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                ></path>
+                              </svg>
+                              &nbsp;Attach file
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Purpose/ Reason
+                            <span class="text-danger">*</span></label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+  text</textarea
+                          >
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Note</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+  text</textarea
+                          >
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Time frame/Expected delivery date
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">text</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Method of choosing contractor
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Expenditures</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >The proposal for
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Expenditures</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label for="exampleInputText1" class="form-label"
+                            >Reference</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputText1"
+                            aria-describedby="textHelp"
+                            value="text"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row align-items-end mt-3">
+                        <div class="col-3">
+                          <label
+                            for="datetime-picker"
+                            class="form-label text-secondary"
+                            >Month of use <span class="text-danger">*</span>
+                          </label>
+                          <div class="datetime-wrapper">
+                            <input
+                              id="datetime-picker"
+                              type="text"
+                              class="form-control flatpickr-input"
+                              placeholder="From"
+                              readonly="readonly"
+                            />
+                            <span class="datetime-icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20px"
+                                height="20px"
+                                fill="currentColor"
+                                class="bi bi-calendar"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                                ></path>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-3">
+                          <div class="datetime-wrapper">
+                            <input
+                              id="datetime-picker"
+                              type="text"
+                              class="form-control flatpickr-input"
+                              placeholder="To"
+                              readonly="readonly"
+                            />
+                            <span class="datetime-icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20px"
+                                height="20px"
+                                fill="currentColor"
+                                class="bi bi-calendar"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                                ></path>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="accordion accordion-style1" id="accordionRow4">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed poppins-semibold display-9"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseRow4"
+                      aria-expanded="true"
+                      aria-controls="collapseRow4"
+                    >
+                      BUDGET'S INFORMATION
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseRow4"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionRow4"
+                  >
+                    <div class="accordion-body">
+                      <div class="row align-items-center">
+                        <div class="col-6">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Department In Charge
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">text</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Year <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Budget Plan
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col-6">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Budget Item
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">text</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Budget Code
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                            disabled
+                          >
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Budget Type
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                            disabled
+                          >
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-end mt-3">
+                        <div class="col-6">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Month of use
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                            disabled
+                          >
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <div class="datetime-wrapper">
+                            <input
+                              id="datetime-picker"
+                              type="text"
+                              class="form-control flatpickr-input"
+                              placeholder="From"
+                              readonly="readonly"
+                            />
+                            <span class="datetime-icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20px"
+                                height="20px"
+                                fill="currentColor"
+                                class="bi bi-calendar"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                                ></path>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <div class="datetime-wrapper">
+                            <input
+                              id="datetime-picker"
+                              type="text"
+                              class="form-control flatpickr-input"
+                              placeholder="To"
+                              readonly="readonly"
+                            />
+                            <span class="datetime-icon">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20px"
+                                height="20px"
+                                fill="currentColor"
+                                class="bi bi-calendar"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"
+                                ></path>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-end mt-3 overflow-auto">
+                        <table
+                          class="table table-borderless table-rounded display-10 leading-18"
+                        >
+                          <thead>
+                            <tr class="text-nowrap">
+                              <th scope="col">Cost Center</th>
+                              <th scope="col">Sub Cost Center</th>
+                              <th scope="col" class="text-end">Amount</th>
+                              <th scope="col">% VAT</th>
+                              <th scope="col" class="text-end">VAT</th>
+                              <th scope="col" class="text-end">Total</th>
+                              <th scope="col">Currency</th>
+                              <th scope="col">Type</th>
+                              <th scope="col">Budget Balance</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">text</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">text</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputText1"
+                                  aria-describedby="textHelp"
+                                  value=""
+                                />
+                              </td>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">text</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputText1"
+                                  aria-describedby="textHelp"
+                                  value=""
+                                  disabled
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputText1"
+                                  aria-describedby="textHelp"
+                                  value=""
+                                  disabled
+                                />
+                              </td>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">VND</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>None-Budget</td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleInputText1"
+                                    aria-describedby="textHelp"
+                                    value=""
+                                    disabled
+                                  />
+                                  <!-- Dropdown list -->
+                                  <div class="dropdown">
+                                    <button
+                                      class="btn-none dropdown-toggle"
+                                      type="button"
+                                      data-bs-toggle="dropdown"
+                                      aria-expanded="false"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-three-dots-vertical"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                    <ul
+                                      class="dropdown-menu dropdown-menu-sm dropdown-menu-end dropdown-menu-text-link display-11 text-center"
+                                    >
+                                      <li>
+                                        <!-- Button trigger modal -->
+                                        <a
+                                          class="dropdown-item"
+                                          href="#"
+                                          data-bs-toggle="modal"
+                                          data-bs-target="#exampleModalView"
+                                          role="button"
+                                          >View</a
+                                        >
+                                      </li>
+                                      <li><hr class="dropdown-divider" /></li>
+                                      <li>
+                                        <a class="dropdown-item" href="#"
+                                          >Delete</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+
+                                  <!-- Modal -->
+                                  <div
+                                    class="modal fade"
+                                    id="exampleModalView"
+                                    tabindex="-1"
+                                    aria-labelledby="exampleModalViewLabel"
+                                    aria-hidden="true"
+                                  >
+                                    <div class="modal-dialog modal-2md">
+                                      <div class="modal-content rounded-3">
+                                        <div class="modal-header">
+                                          <h1
+                                            class="modal-title fs-5 modal-title-style1"
+                                            id="exampleModalLabel"
+                                          >
+                                            REQUESTED DEPARTMENT
+                                          </h1>
+                                          <button
+                                            type="button"
+                                            class="btn-close"
+                                            data-bs-dismiss="modal"
+                                            aria-label="Close"
+                                          ></button>
+                                        </div>
+                                        <div class="modal-body">
+                                          <!-- Accordions -->
+                                          <div
+                                            class="accordion accordion-style2"
+                                            id="accordionExampleLvRoot"
+                                          >
+                                            <div class="accordion-item">
+                                              <h2 class="accordion-header">
+                                                <button
+                                                  class="accordion-button"
+                                                  type="button"
+                                                  data-bs-toggle="collapse"
+                                                  data-bs-target="#collapseRoot"
+                                                  aria-expanded="true"
+                                                  aria-controls="collapseRoot"
+                                                >
+                                                  AEON VIETNAM (FULL TIME) (G9)
+                                                </button>
+                                              </h2>
+                                              <div
+                                                id="collapseRoot"
+                                                class="accordion-collapse collapse"
+                                                data-bs-parent="#accordionExampleLvRoot"
+                                              >
+                                                <ul class="accordion-body">
+                                                  <!-- Accordions level 1 -->
+                                                  <li
+                                                    class="accordion accordion-style2"
+                                                    id="accordionExampleLv1"
+                                                  >
+                                                    <div
+                                                      class="accordion-item tree-root"
+                                                    >
+                                                      <h2
+                                                        class="accordion-header"
+                                                      >
+                                                        <button
+                                                          class="accordion-button"
+                                                          type="button"
+                                                          data-bs-toggle="collapse"
+                                                          data-bs-target="#collapseOne"
+                                                          aria-expanded="true"
+                                                          aria-controls="collapseOne"
+                                                        >
+                                                          SM (G7)
+                                                        </button>
+                                                      </h2>
+                                                      <div
+                                                        id="collapseOne"
+                                                        class="accordion-collapse collapse"
+                                                        data-bs-parent="#accordionExampleLv1"
+                                                      >
+                                                        <ul
+                                                          class="accordion-body"
+                                                        >
+                                                          <!-- Accordions level 2 -->
+                                                          <li
+                                                            class="accordion accordion-style2"
+                                                            id="accordionExampleLv2"
+                                                          >
+                                                            <div
+                                                              class="accordion-item"
+                                                            >
+                                                              <h2
+                                                                class="accordion-header"
+                                                              >
+                                                                <button
+                                                                  class="accordion-button"
+                                                                  type="button"
+                                                                  data-bs-toggle="collapse"
+                                                                  data-bs-target="#collapseTwo"
+                                                                  aria-expanded="true"
+                                                                  aria-controls="collapseTwo"
+                                                                >
+                                                                  SM (G7)
+                                                                </button>
+                                                              </h2>
+                                                              <div
+                                                                id="collapseTwo"
+                                                                class="accordion-collapse collapse"
+                                                                data-bs-parent="#accordionExampleLv2"
+                                                              >
+                                                                <ul
+                                                                  class="accordion-body"
+                                                                >
+                                                                  <!-- Accordions level 3 -->
+                                                                  <li
+                                                                    class="accordion accordion-style2"
+                                                                    id="accordionExampleLv3"
+                                                                  >
+                                                                    <div
+                                                                      class="accordion-item tree-last"
+                                                                    >
+                                                                      <h2
+                                                                        class="accordion-header"
+                                                                      >
+                                                                        <button
+                                                                          class="accordion-button"
+                                                                          type="button"
+                                                                        >
+                                                                          SM
+                                                                          BUSINESS
+                                                                          (G5)
+                                                                        </button>
+                                                                      </h2>
+                                                                    </div>
+                                                                  </li>
+                                                                </ul>
+                                                              </div>
+                                                            </div>
+                                                          </li>
+
+                                                          <!-- Accordions level 2B -->
+                                                          <li
+                                                            class="accordion accordion-style2"
+                                                            id="accordionExampleLv2B"
+                                                          >
+                                                            <div
+                                                              class="accordion-item"
+                                                            >
+                                                              <h2
+                                                                class="accordion-header"
+                                                              >
+                                                                <button
+                                                                  class="accordion-button"
+                                                                  type="button"
+                                                                  data-bs-toggle="collapse"
+                                                                  data-bs-target="#collapseTwoB"
+                                                                  aria-expanded="true"
+                                                                  aria-controls="collapseTwoB"
+                                                                >
+                                                                  OPERATION (G8)
+                                                                </button>
+                                                              </h2>
+                                                              <div
+                                                                id="collapseTwoB"
+                                                                class="accordion-collapse collapse"
+                                                                data-bs-parent="#accordionExampleLv2B"
+                                                              >
+                                                                <ul
+                                                                  class="accordion-body"
+                                                                >
+                                                                  <!-- Accordions level 3B -->
+                                                                  <li
+                                                                    class="accordion accordion-style2"
+                                                                    id="accordionExampleLv3B"
+                                                                  >
+                                                                    <div
+                                                                      class="accordion-item tree-last"
+                                                                    >
+                                                                      <h2
+                                                                        class="accordion-header"
+                                                                      >
+                                                                        <button
+                                                                          class="accordion-button"
+                                                                          type="button"
+                                                                        >
+                                                                          ONE
+                                                                          AEON
+                                                                          PROJECT
+                                                                          (G6)
+                                                                        </button>
+                                                                      </h2>
+                                                                    </div>
+                                                                  </li>
+                                                                </ul>
+                                                              </div>
+                                                            </div>
+                                                          </li>
+
+                                                          <!-- Accordions level 2C -->
+                                                          <li
+                                                            class="accordion accordion-style2"
+                                                            id="accordionExampleLv2C"
+                                                          >
+                                                            <div
+                                                              class="accordion-item"
+                                                            >
+                                                              <h2
+                                                                class="accordion-header"
+                                                              >
+                                                                <button
+                                                                  class="accordion-button"
+                                                                  type="button"
+                                                                >
+                                                                  BACK OFFICE
+                                                                  (G8)
+                                                                </button>
+                                                              </h2>
+                                                            </div>
+                                                          </li>
+                                                        </ul>
+                                                      </div>
+                                                    </div>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <!-- Buttons -->
+                                          <div class="form-group float-end">
+                                            <button
+                                              type="button"
+                                              class="btn btn-white rounded-3 poppins-regular display-9"
+                                            >
+                                              Cancel
+                                            </button>
+                                            &nbsp;
+                                            <button
+                                              type="button"
+                                              class="btn btn-primary rounded-3 poppins-regular display-9"
+                                            >
+                                              Select
+                                            </button>
+                                          </div>
+                                          <div class="clearfix"></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">text</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">text</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputText1"
+                                  aria-describedby="textHelp"
+                                  value=""
+                                />
+                              </td>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">text</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputText1"
+                                  aria-describedby="textHelp"
+                                  value=""
+                                  disabled
+                                />
+                              </td>
+                              <td>
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="exampleInputText1"
+                                  aria-describedby="textHelp"
+                                  value=""
+                                  disabled
+                                />
+                              </td>
+                              <td>
+                                <select
+                                  id="exampleSelect1"
+                                  class="form-select"
+                                  aria-label="Default select example"
+                                >
+                                  <option selected="">VND</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </td>
+                              <td>None-Budget</td>
+                              <td>
+                                <div class="d-flex align-items-center">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="exampleInputText1"
+                                    aria-describedby="textHelp"
+                                    value=""
+                                    disabled
+                                  />
+                                  <div class="dropdown">
+                                    <button
+                                      class="btn-none dropdown-toggle"
+                                      type="button"
+                                      data-bs-toggle="dropdown"
+                                      aria-expanded="false"
+                                    >
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="16"
+                                        height="16"
+                                        fill="currentColor"
+                                        class="bi bi-three-dots-vertical"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"
+                                        ></path>
+                                      </svg>
+                                    </button>
+                                    <ul
+                                      class="dropdown-menu dropdown-menu-sm dropdown-menu-end dropdown-menu-text-link display-11 text-center"
+                                    >
+                                      <li>
+                                        <a class="dropdown-item" href="#"
+                                          >View</a
+                                        >
+                                      </li>
+                                      <li><hr class="dropdown-divider" /></li>
+                                      <li>
+                                        <a class="dropdown-item" href="#"
+                                          >Delete</a
+                                        >
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </td>
+                            </tr>
+
+                            <tr class="align-middle">
+                              <td colspan="2">
+                                <!-- Modal Trigger -->
+                                <button
+                                  type="button"
+                                  class="btn btn-pink-300 rounded-12px poppins-regular display-11 py-1 px-2"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#exampleModalView2"
+                                >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    fill="currentColor"
+                                    class="bi bi-plus-square"
+                                    viewBox="0 0 16 16"
+                                  >
+                                    <path
+                                      d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                                    ></path>
+                                    <path
+                                      d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                                    ></path>
+                                  </svg>
+                                  &nbsp;Add
+                                </button>
+
+                                <!-- Modal -->
+                                <div
+                                  class="modal fade"
+                                  id="exampleModalView2"
+                                  tabindex="-1"
+                                  aria-labelledby="exampleModalView2Label"
+                                  aria-hidden="true"
+                                >
+                                  <div class="modal-dialog modal-2md">
+                                    <div class="modal-content rounded-3">
+                                      <div class="modal-header">
+                                        <h1
+                                          class="modal-title fs-5 modal-title-style1"
+                                          id="exampleModalLabel"
+                                        >
+                                          BUDGET PHASING
+                                        </h1>
+                                        <button
+                                          type="button"
+                                          class="btn-close"
+                                          data-bs-dismiss="modal"
+                                          aria-label="Close"
+                                        ></button>
+                                      </div>
+                                      <div class="modal-body">
+                                        <div
+                                          class="row display-9 poppins-regular space-p-small"
+                                        >
+                                          <div class="col-5 text-grey">
+                                            <p>Department in charge</p>
+                                            <p>Year</p>
+                                            <p>Budget Type</p>
+                                            <p>Budget Item</p>
+                                            <p>Cost Center</p>
+                                            <p>Total(VND)</p>
+                                            <p>Month of Use</p>
+                                          </div>
+                                          <div class="col-7 text-grey-300">
+                                            <p>
+                                              CORPORATE SUSTAINABILITY &
+                                              EXTERNAL (G5)
+                                            </p>
+                                            <p>2024</p>
+                                            <p>Non-budget</p>
+                                            <p>
+                                              PL51-6427270000-External Relation
+                                              expense
+                                            </p>
+                                            <p>Head Quarter-HCM</p>
+                                            <p>2,000,000.00</p>
+                                            <p>3</p>
+                                          </div>
+                                        </div>
+
+                                        <!-- BREAKLINE -->
+                                        <div class="h-1d25r"></div>
+
+                                        <!-- Table -->
+                                        <div class="row">
+                                          <div class="col">
+                                            <p
+                                              class="poppins-semibold display-9 text-grey-300"
+                                            >
+                                              PHASING
+                                            </p>
+                                          </div>
+                                          <div class="col text-end">
+                                            <button
+                                              type="button"
+                                              class="btn btn-outline-primary poppins-regular display-9 p-2p0d5r"
+                                            >
+                                              <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="10"
+                                                height="10"
+                                                fill="currentColor"
+                                                class="bi bi-pencil"
+                                                viewBox="0 0 16 16"
+                                              >
+                                                <path
+                                                  d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"
+                                                ></path>
+                                              </svg>
+                                              &nbsp;Edit
+                                            </button>
+                                          </div>
+                                        </div>
+
+                                        <!-- BREAKLINE -->
+                                        <div class="h-0d5r"></div>
+
+                                        <div class="row">
+                                          <div class="col">
+                                            <table
+                                              class="table table-borderless table-rounded poppins-regular display-9 text-grey-300 leading-18"
+                                            >
+                                              <thead>
+                                                <tr>
+                                                  <th scope="col">Month</th>
+                                                  <th scope="col">Amount</th>
+                                                </tr>
+                                              </thead>
+                                              <tbody>
+                                                <tr>
+                                                  <td>01/2024</td>
+                                                  <td>666,667.00</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>02/2024</td>
+                                                  <td>666,667.00</td>
+                                                </tr>
+                                                <tr>
+                                                  <td>03/2024</td>
+                                                  <td>666,667.00</td>
+                                                </tr>
+                                                <tr class="poppins-semibold">
+                                                  <td>Total</td>
+                                                  <td>2000001</td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+
+                                            <!-- Close trigger -->
+                                            <div class="row">
+                                              <div class="col text-end">
+                                                <button
+                                                  type="button"
+                                                  class="btn btn-primary rounded-3 poppins-semibold display-8"
+                                                >
+                                                  Close
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="text-end">
+                                  <p class="poppins-semibold display-11 m-0">
+                                    Total in VND
+                                  </p>
+                                  <p class="poppins-regular display-9 m-0">
+                                    9.000.000.000.00
+                                  </p>
+                                </div>
+                              </td>
+                              <td></td>
+                              <td>
+                                <div class="text-end">
+                                  <p class="poppins-semibold display-11 m-0">
+                                    Total in VND
+                                  </p>
+                                  <p class="poppins-regular display-9 m-0">
+                                    9.000.000.000.00
+                                  </p>
+                                </div>
+                              </td>
+                              <td colspan="4"></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-3">
+              <div class="accordion accordion-style1" id="accordionRow5">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed poppins-semibold display-9"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseRow5"
+                      aria-expanded="true"
+                      aria-controls="collapseRow5"
+                    >
+                      PROPOSE TO CHOOSE CONTRACTOR
+                    </button>
+                  </h2>
+                  <div
+                    id="collapseRow5"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionRow5"
+                  >
+                    <div class="accordion-body">
+                      <div class="row align-items-center">
+                        <div class="col-9">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Contractor Name
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">text</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Number quotations
+                            <span class="text-danger">*</span></label
+                          >
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected=""></option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="mt-3">
+                        <button
+                          type="button"
+                          class="btn btn-outline-pink-300 rounded-3 btn-sm poppins-regular display-9 d-flex align-items-center"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModalView3"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-plus"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"
+                            ></path>
+                          </svg>
+                          &nbsp;Attach file
+                        </button>
+                        <!-- Modal -->
+                        <div
+                          class="modal fade"
+                          id="exampleModalView3"
+                          tabindex="-1"
+                          aria-labelledby="exampleModalView3Label"
+                          aria-hidden="true"
+                        >
+                          <div class="modal-dialog">
+                            <div class="modal-content rounded-3">
+                              <div class="modal-header">
+                                <h1
+                                  class="modal-title fs-5 modal-title-style1"
+                                  id="exampleModalLabel"
+                                >
+                                  ATTACH DOCUMENT
+                                </h1>
+                                <button
+                                  type="button"
+                                  class="btn-close"
+                                  data-bs-dismiss="modal"
+                                  aria-label="Close"
+                                ></button>
+                              </div>
+                              <div class="modal-body">
+                                <!-- Select document -->
+                                <div>
+                                  <p
+                                    class="poppins-regular display-8 text-grey"
+                                  >
+                                    Select the type of document
+                                  </p>
+                                  <button
+                                    type="button"
+                                    class="btn btn-outline-dark rounded-pill btn-sm poppins-regular display-9 px-3"
+                                  >
+                                    quotation
+                                  </button>
+                                  &nbsp;
+                                  <button
+                                    type="button"
+                                    class="btn btn-primary rounded-pill btn-sm poppins-regular display-9 px-3"
+                                  >
+                                    drawing
+                                  </button>
+                                  &nbsp;
+                                  <button
+                                    type="button"
+                                    class="btn btn-outline-dark rounded-pill btn-sm poppins-regular display-9 px-3"
+                                  >
+                                    other
+                                  </button>
+                                  &nbsp;
+                                  <button
+                                    type="button"
+                                    class="btn btn-outline-dark rounded-pill btn-sm poppins-regular display-9 px-3"
+                                  >
+                                    f3
+                                  </button>
+                                </div>
+
+                                <!-- Drag upload file -->
+                                <div class="drop-container my-3">
+                                  <div id="dropZone" class="drop-zone">
+                                    <span class="drop-icon">
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="24"
+                                        height="24"
+                                        fill="currentColor"
+                                        class="bi bi-upload"
+                                        viewBox="0 0 16 16"
+                                      >
+                                        <path
+                                          d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"
+                                        />
+                                        <path
+                                          d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"
+                                        />
+                                      </svg>
+                                    </span>
+                                    <div class="h-1d25r"></div>
+                                    <p
+                                      class="poppins-medium display-8 text-dark"
+                                    >
+                                      Drag and Drop or
+                                      <span
+                                        class="inter-regular display-8 text-primary"
+                                        >Click to uppload</span
+                                      >
+                                    </p>
+                                    <p
+                                      class="poppins-medium display-11 text-grey"
+                                    >
+                                      Supported formats:
+                                      <span class="poppins-regular"
+                                        >CSV or XLS. Max Size: 25MB</span
+                                      >
+                                    </p>
+                                  </div>
+                                  <input
+                                    type="file"
+                                    id="dropUpload"
+                                    class="drop-upload"
+                                    multiple
+                                  />
+                                  <ul
+                                    id="dropList"
+                                    class="list-group drop-list"
+                                  ></ul>
+                                </div>
+
+                                <!-- Handle buttons -->
+                                <div class="text-end">
+                                  <button
+                                    type="button"
+                                    class="btn btn-primary rounded-3 btn-outline-blue poppins-regular display-9 py-1"
+                                  >
+                                    Cancel
+                                  </button>
+                                  &nbsp;
+                                  <button
+                                    type="button"
+                                    class="btn btn-primary rounded-3 bg-blue poppins-regular display-9 py-1"
+                                  >
+                                    Continue
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Experiences</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+                          </textarea>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Special Reason</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+                          </textarea>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Experiences</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+                          </textarea>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleFormControlTextarea1"
+                            class="form-label"
+                            >Special Reason</label
+                          >
+                          <textarea
+                            class="form-control"
+                            id="exampleFormControlTextarea1"
+                            rows="3"
+                          >
+                          </textarea>
+                        </div>
+                      </div>
+
+                      <div class="row align-items-center mt-3">
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >Price
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">text</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >VAT
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Expenditures</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label
+                            for="exampleSelect1"
+                            class="form-label text-secondary"
+                            >VAT (%)
+                          </label>
+                          <select
+                            id="exampleSelect1"
+                            class="form-select"
+                            aria-label="Default select example"
+                          >
+                            <option selected="">Expenditures</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <label for="exampleInputText1" class="form-label"
+                            >Total</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="exampleInputText1"
+                            aria-describedby="textHelp"
+                            value="text"
+                            disabled
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+
+    <!-- ========== JS ========== -->
+    <script src="assets/load-scripts.js"></script>
+  </body>
+</html>
